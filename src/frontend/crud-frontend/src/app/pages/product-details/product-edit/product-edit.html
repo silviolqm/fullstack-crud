@@ -1,0 +1,21 @@
+<div class="flex flex-col items-center justify-center m-4">
+  <h1 class="text-xl p-2 font-bold text-blue-900">Editar Produto:</h1>
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm" class="max-w-md w-full m-4" autocomplete="off">
+    <mat-form-field class="w-full">
+      <mat-label>Nome</mat-label>
+      <input matInput name="productName" placeholder="Ex.: Camisa" [(ngModel)]="productName" required>
+    </mat-form-field>
+    <mat-form-field class="w-full">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput name="productDescription" placeholder="Ex.: Camiseta de algodão..." [(ngModel)]="productDescription" required></textarea>
+    </mat-form-field>
+    <mat-form-field class="w-full">
+      <mat-label>Preço</mat-label>
+      <input matInput name="productPrice" type="number" min="0" step="1.00" placeholder="Ex. 100" [(ngModel)]="productPrice" required>
+    </mat-form-field>
+    <div class="flex flex-row justify-end">
+      <button matButton="filled" type="submit">Confirmar</button>
+      <button matButton="outlined" type="button" class="ml-4" routerLink="/">Cancelar</button>
+    </div>
+  </form>
+</div>
